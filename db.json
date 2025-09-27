@@ -1,0 +1,43 @@
+{
+  "players": [
+    {
+      "id": "531a14d0-d216-45c3-bc5b-11f95575fe88",
+      "name": "cew",
+      "country": "cdw",
+      "continent": "America"
+    },
+    {
+      "id": "5806b485-ade2-4943-9eff-6ccb55e940fd",
+      "name": "jhgc",
+      "country": "kitfd",
+      "continent": "Africa"
+    }
+  ],
+  "filters": [
+    {
+      "id": "all",
+      "label": "All",
+      "classes": "bg-gradient-to-r from-black to-slate-600 rounded-l-md text-white"
+    },
+    {
+      "id": "europe",
+      "label": "Europe",
+      "classes": "bg-gradient-to-r from-blue-500 to-blue-700 text-white"
+    },
+    {
+      "id": "asia",
+      "label": "Asia",
+      "classes": "bg-gradient-to-r from-green-500 to-green-700 text-white"
+    },
+    {
+      "id": "africa",
+      "label": "Africa",
+      "classes": "bg-gradient-to-r from- to-slate-600 text-white"
+    },
+    {
+      "id": "america",
+      "label": "America",
+      "classes": "bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-r-md text-white"
+    }
+  ]
+}
