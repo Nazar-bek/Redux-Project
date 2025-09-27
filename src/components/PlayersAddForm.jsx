@@ -2,8 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import { useHttp } from "../hooks/useHttp";
-import { playersCreated } from "../actions";
-import Spinner from "./Spinner";
+import { playersCreated } from "../slices/players-slice";
 const PlayersAddForm = () => {
   const { filters, filtersLoadingStatus } = useSelector((state) => state.filters);
   const dispatch = useDispatch();

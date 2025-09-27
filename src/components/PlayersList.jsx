@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHttp } from '../hooks/useHttp';
-import { fetchPlayers, playerDeleted, } from '../actions';
 import Spinner from './Spinner';
 import Empty from './Empty';
 import PlayerListItem from './PlayerListItem';
 import { createSelector } from '@reduxjs/toolkit'
+import {  playerDeleted} from '../slices/players-slice';
+import { fetchPlayers } from '../actions';
 const PlayersList = () => {
 
   const filteredPlayersSelector = createSelector(
@@ -20,7 +21,7 @@ const PlayersList = () => {
       }
     }
   )
-  
+
   const filteredPlayers = useSelector(filteredPlayersSelector)
   const playersLoadingStatus = useSelector(state => state.players.playersLoadingStatus)
   const dispatch = useDispatch()

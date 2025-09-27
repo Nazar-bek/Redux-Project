@@ -2,13 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHttp } from "../hooks/useHttp";
 import {
-  activeFilterChanged,
   fetchFilters,
-  filtersFetched,
-  filtersFetching,
-  filtersFetchingError,
 } from "../actions";
 import Spinner from "./Spinner";
+import { activeFilterChanged } from "../slices/filters-slice";
 const PlayersFilter = () => {
   const { filters, filtersLoadingStatus, activeFilter } = useSelector((state) => state.filters);
   const dispatch = useDispatch();
