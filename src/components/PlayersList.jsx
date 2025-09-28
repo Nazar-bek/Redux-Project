@@ -5,8 +5,8 @@ import Spinner from './Spinner';
 import Empty from './Empty';
 import PlayerListItem from './PlayerListItem';
 import { createSelector } from '@reduxjs/toolkit'
-import {  playerDeleted} from '../slices/players-slice';
-import { fetchPlayers } from '../actions';
+import {  fetchPlayers, playerDeleted} from '../slices/players-slice';
+
 const PlayersList = () => {
 
   const filteredPlayersSelector = createSelector(
@@ -27,7 +27,7 @@ const PlayersList = () => {
   const dispatch = useDispatch()
   const { request} = useHttp()
   useEffect(() => {
-    dispatch(fetchPlayers(request))
+    dispatch(fetchPlayers())
   }, [])
 
   const onDelete = useCallback((id) => {

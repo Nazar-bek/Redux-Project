@@ -1,18 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHttp } from "../hooks/useHttp";
-import {
-  fetchFilters,
-} from "../actions";
 import Spinner from "./Spinner";
-import { activeFilterChanged } from "../slices/filters-slice";
+import { activeFilterChanged, fetchFilters } from "../slices/filters-slice";
 const PlayersFilter = () => {
   const { filters, filtersLoadingStatus, activeFilter } = useSelector((state) => state.filters);
   const dispatch = useDispatch();
-  const { request } = useHttp();
-
   useEffect(() => {
-    dispatch(fetchFilters(request))
+    dispatch(fetchFilters())
   }, []);
 
   const renderFetchingStatus = () => {
@@ -30,7 +25,7 @@ const PlayersFilter = () => {
     }
 
     return filters.map(({label, classes, id}) => (
-        <button onClick={() => dispatch(activeFilterChanged(label))}  key={id} className={`px-4 py-2 ${classes} ${activeFilter === label && "font-bold !text-red-500"} hover:opacity-90 transition-all cursor-pointer `}>
+        <button onClick={() => dispatch(activeFilterChanged(label))}  key={id} className={`px-4 py-2 !cursor-pointer ${classes} ${activeFilter === label && "font-bold !text-red-500"} hover:opacity-90 transition-all`}>
           {label}
         </button>
     ))

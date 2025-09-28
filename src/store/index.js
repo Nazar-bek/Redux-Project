@@ -16,30 +16,3 @@ const store = configureStore({
   devTools: true,
 })
 export default store
-
-
-
-
-
-
-
-
-
-// const devTools =  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
-
-
-// const enhancer = (createStore) => (...args) => {
-//     const store = createStore(...args)
-//     const oldDispacth = store.dispatch
-
-//     store.dispatch = action => {
-//         if(typeof action === "string"){
-//             return oldDispacth({
-//                 type: action
-//             })
-//         }
-//         return oldDispacth(action)
-//     }
-//     return store
-// }
